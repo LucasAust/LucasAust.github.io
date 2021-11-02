@@ -8,15 +8,30 @@ body {
     padding: 10px;
     margin: 10px;
     background: lightgrey;
+    border-radius: 5px;
 
 }
 
 .assigment img {
     width: 200px;
-    padding:10px;
+    margin: 10px;
+    border: 2px solid #87CEFA;
+}
+.assignment img:hover
+{
+    border: 2px solid whitesmoke;
 }
 
 h1{
     color:rgb(7, 0, 99);
     text-align:center;
+}
+
+a{
+    text-decoration:none;
+    color: #87CEFA;
+}
+a:hover
+{
+color:whitesmoke;
 }
