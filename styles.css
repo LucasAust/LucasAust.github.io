@@ -16,7 +16,7 @@ body {
     width: 200px;
     height: 200px;
     margin: 20px;
-    border: 2px solid #87CEFA;
+    border: 2px solid black;
 }
 .assignment img:hover
 {
@@ -30,7 +30,7 @@ h1{
 
 a{
     text-decoration:none;
-    color: #87CEFA;
+    color: black;
 }
 a:hover
 {
