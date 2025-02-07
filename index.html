@@ -1,81 +1,716 @@
-<DOCTYPE html>
-    <html>
-       <head>
-<title>CSCE 190: Lucas Aust</title>
-<link rel="stylesheet" href="styles.css">
-       </head> 
-       <body>
-           <h1>Lucas Aust's CSCE 190 Site</h1>
-
-           <div class="assignments">
-            <!--Problem Statement-->
-            <section class="assignment">
-              <a href="files/problem-statement.pdf"><h2>Problem Statement: Time Management Helper </h2></a>
-              <a href="files/problem-statement.pdf"><img src="images/problem-statement.png"></a> 
-                    <p>Our users are stressed because they have trouble managing their time 
-                      between classes. There are too many users with inefficient time 
-                      management. Our service would give them possible schedules based on 
-                      what they plan to do that day to better plan their day.
-                    </p>
-            </section>
-            
-                <!-- Affinity Diagram-->
-              <section class="assignment">
-                <a href="files/time-management-jamboard.pdf"><h2>Affinity Diagram: Time Management App</h2></a>
-                <a href="files/time-management-jamboard.pdf"><img src="images/affinity-diagram.png"></a>
-                      </p>
-                      My group and I combined our respective genius ideas in order to map out everything to do with a time management app.
-                    </p>
-                </section>
-                
-
-            <!-- Persona Assignment-->
-            <section class="assignment">
-              <a href="files/Combined-Personas.pdf"><h2>Persona: 4 Personas for Time Management</h2></a>
-              <a href="files/Combined-Personas.pdf"><img src="images/Group-Personas.png"></a>
-                    </p>
-                    4 Personas of typical time management app users.
-                  </p>
-            </section>   
-
-          <!-- Storyboard Assignment-->
-          <section class="assignment">
-            <a href="files/Combined-Storyboards.pdf"><h2>Storyboards: 4 Storyboards for Time Management</h2></a>
-            <a href="files/Combined-Storyboards.pdf"><img src="images/Storyboard.png"></a>
-                  </p>
-                  4 Storyboards for possible situations time management app users face.
-                </p>
-            </section>
-
-            <!-- SSketch Assignment-->
-          <section class="assignment">
-            <a href="files/CombinedSketches.pdf"><h2>Sketches: 4 Sketches for Time Management</h2></a>
-            <a href="files/CombinedSketches.pdf"><img src="images/Sketch.png"></a>
-                  </p>
-                  4 possible ways the app may look.
-                </p>
-            </section>
-
-            <!-- Prototype-->
-          <section class="assignment">
-            <a href="https://www.youtube.com/watch?v=_JnRO7hFZjA"><h2>Paper Prototype</h2></a>
-            <a href="https://www.youtube.com/watch?v=_JnRO7hFZjA"><img src="images/Paper-Profile.png"></a>
-                  </p>
-                  Paper walkthrough of every screen in the time management helper app.
-                </p>
-              </section>
-
-                <!-- Lo-Fi  prototype-->
-          <section class="assignment">
-            <a href="files/prototype/preview.html"><h2>High-Fi Prototype</h2></a>
-            <a href="files/prototype/preview.html"><img src="images/Prototype.PNG"></a>
-                  </p>
-                 Interactive prototype that provides a walkthrough for every sceen of our app.
-                </p>
-              </section>
-
-          </div>
-
-       </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Essential Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lucas Aust - Digital Designer, Developer, and Creative Storyteller. Explore my work experience, education, projects, publications, and download my resume." />
+  <meta name="author" content="Lucas Aust" />
+  <title>Lucas Aust | Digital Resume</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Favicon (Optional) -->
+  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
+  
+  <style>
+    /* ===============================
+       CSS Variables & Global Styles
+       =============================== */
+    :root {
+      --carolina-blue: #4B9CD3;
+      --sandstone: #D2B48C;
+      --grey: #808080;
+      --dark-grey: #333333;
+      --light-grey: #f5f5f5;
+      --accent-shadow: rgba(0, 0, 0, 0.1);
+      --bg-gradient: radial-gradient(circle, var(--light-grey), var(--sandstone));
+      --card-bg: var(--sandstone);
+      --transition-base: 0.3s ease;
+    }
+    /* Dark Mode Variables */
+    body.dark-mode {
+      --carolina-blue: #5AA9E6;
+      --sandstone: #b88667;
+      --grey: #999999;
+      --dark-grey: #111111;
+      --light-grey: #222222;
+      --bg-gradient: radial-gradient(circle, #222222, #111111);
+      --card-bg: #333333;
+    }
     
+    /* =====================
+       Reset & Base Styles
+       ===================== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--dark-grey);
+      line-height: 1.6;
+      transition: background var(--transition-base), color var(--transition-base);
+    }
+    
+    /* =====================
+       Preloader
+       ===================== */
+    #preloader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: var(--light-grey);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 3000;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 5px solid var(--carolina-blue);
+      border-top: 5px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    
+    /* =====================
+       Scroll Progress Bar
+       ===================== */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0%;
+      height: 4px;
+      background: var(--carolina-blue);
+      z-index: 2500;
+      transition: width 0.1s ease-out;
+    }
+    
+    /* =====================
+       Fixed Navigation with Toggle Button
+       ===================== */
+    nav.fixed-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.35);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 4px var(--accent-shadow);
+      z-index: 2000;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition-base), padding var(--transition-base);
+    }
+    nav.fixed-nav.scrolled {
+      background: var(--light-grey);
+      padding: 0.3rem 1rem;
+    }
+    nav.fixed-nav ul {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+    nav.fixed-nav a {
+      color: var(--dark-grey);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      transition: background var(--transition-base), color var(--transition-base);
+    }
+    nav.fixed-nav a:hover {
+      background: var(--carolina-blue);
+      color: var(--light-grey);
+    }
+    /* Dark Mode Toggle Button Styled as a Menu Item */
+    .toggle-mode {
+      background: var(--carolina-blue);
+      color: var(--light-grey);
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background var(--transition-base);
+    }
+    .toggle-mode:hover {
+      background: var(--sandstone);
+    }
+    
+    /* =====================
+       Hero Section with Particle Canvas & Animated Blob
+       ===================== */
+    header {
+      position: relative;
+      text-align: center;
+      padding: 7rem 1rem 4rem;
+      background: linear-gradient(135deg, var(--carolina-blue), var(--sandstone));
+      color: var(--light-grey);
+      overflow: hidden;
+      perspective: 1000px;
+    }
+    /* Particle Canvas */
+    #particle-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+    }
+    /* Animated Blob */
+    .animated-blob {
+      position: absolute;
+      top: -60px;
+      left: -60px;
+      width: 300px;
+      height: 300px;
+      background: var(--carolina-blue);
+      opacity: 0.3;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: blob-move 10s infinite ease-in-out;
+      z-index: 1;
+    }
+    @keyframes blob-move {
+      0% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(100px, 50px) scale(1.2); }
+      66% { transform: translate(-50px, 100px) scale(0.8); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+    header h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+      text-shadow: 4px 4px 0 var(--grey);
+      position: relative;
+      z-index: 2;
+      transform: translateZ(20px);
+    }
+    /* Glitch Effect */
+    header h1.glitch { animation: glitch 2.5s infinite; }
+    @keyframes glitch {
+      0% { text-shadow: 4px 4px 0 var(--grey); }
+      20% { text-shadow: -4px 4px 0 var(--carolina-blue); }
+      40% { text-shadow: 4px -4px 0 var(--sandstone); }
+      60% { text-shadow: -4px -4px 0 var(--grey); }
+      80% { text-shadow: 4px 4px 0 var(--carolina-blue); }
+      100% { text-shadow: -4px 4px 0 var(--sandstone); }
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      transform: translateZ(20px);
+    }
+    /* Scroll Down Indicator */
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      color: var(--light-grey);
+      animation: bounce 2s infinite;
+      z-index: 2;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+    
+    /* =====================
+       Main Content & Sections
+       ===================== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: rgba(255,255,255,0.35);
+      backdrop-filter: blur(10px);
+      border-left: 8px solid var(--carolina-blue);
+      box-shadow: 0 4px 6px var(--accent-shadow);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      /* Add a slight stagger effect */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--carolina-blue);
+      position: relative;
+      z-index: 1;
+    }
+    section h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 5px;
+      background: var(--sandstone);
+      margin-top: 0.5rem;
+      border-radius: 2px;
+    }
+    section p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    /* SVG Overlay at Section Bottom */
+    section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0 C300,60 900,60 1200,0 L1200,120 L0,120 Z" fill="%23ffffff" opacity="0.2"/></svg>');
+      background-size: cover;
+      z-index: 1;
+    }
+    
+    /* =====================
+       Neomorphic Cards & 3D Tilt Effects
+       ===================== */
+    .card {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-left: 4px solid var(--carolina-blue);
+      border-radius: 8px;
+      box-shadow: 8px 8px 16px rgba(0,0,0,0.1),
+                  -8px -8px 16px rgba(255,255,255,0.7);
+      transition: transform var(--transition-base);
+      transform-style: preserve-3d;
+    }
+    .card:hover { transform: perspective(600px) rotateX(3deg) rotateY(3deg) translateY(-3px); }
+    
+    /* Projects Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .grid-item {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(5px);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 8px 8px 16px rgba(0,0,0,0.1),
+                  -8px -8px 16px rgba(255,255,255,0.7);
+      transition: transform var(--transition-base);
+      transform-style: preserve-3d;
+    }
+    .grid-item:hover { transform: perspective(600px) rotateX(2deg) rotateY(-2deg) scale(1.05); }
+    
+    /* Resume Download Button */
+    .download-resume {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .download-resume a {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--carolina-blue);
+      color: var(--light-grey);
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+      transition: background var(--transition-base), transform var(--transition-base);
+    }
+    .download-resume a:hover {
+      background: var(--sandstone);
+      transform: translateY(-3px);
+    }
+    
+    /* Elevated Brutalism Accent Block */
+    .brutalist {
+      background: var(--dark-grey);
+      color: var(--light-grey);
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    
+    /* =====================
+       Footer
+       ===================== */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--dark-grey);
+      color: var(--light-grey);
+      font-size: 0.9rem;
+    }
+    
+    /* =====================
+       Back-to-Top Button
+       ===================== */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--carolina-blue);
+      color: var(--light-grey);
+      padding: 0.8rem 1rem;
+      border-radius: 50%;
+      box-shadow: 2px 2px 6px var(--accent-shadow);
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 2100;
+    }
+    .back-to-top.show { opacity: 1; visibility: visible; }
+    
+    /* =====================
+       Staggered Scroll Reveal Animation
+       ===================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      transition-delay: 0.2s;
+    }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    
+    /* =====================
+       Responsive Typography
+       ===================== */
+    @media (max-width: 768px) {
+      header h1 { font-size: 3rem; }
+      section h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Preloader -->
+  <div id="preloader" role="alert" aria-busy="true">
+    <div class="spinner" aria-label="Loading"></div>
+  </div>
+  
+  <!-- Scroll Progress Bar -->
+  <div id="progress-bar" aria-hidden="true"></div>
+  
+  <!-- Fixed Navigation with Dark Mode Toggle -->
+  <nav class="fixed-nav" role="navigation" aria-label="Main Navigation">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#download">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button class="toggle-mode" id="toggleModeBtn">Enter Dark Mode</button></li>
+    </ul>
+  </nav>
+  
+  <!-- Header / Hero Section -->
+  <header>
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+    <!-- Animated Blob -->
+    <div class="animated-blob"></div>
+    <h1 class="glitch reveal">Lucas Aust</h1>
+    <p class="reveal">Digital Designer • Developer • Creative Storyteller</p>
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-down reveal" aria-hidden="true">&#x2193;</div>
+  </header>
+  
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- About Me Section -->
+    <section id="about" class="reveal" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p>
+        I'm Lucas Aust—a multidisciplinary digital creative merging modern design with retro flair. My work spans digital design, development, and interactive storytelling with a passion for bold visuals and immersive experiences.
+      </p>
+    </section>
+    
+    <!-- Work Experience Section -->
+    <section id="work" class="reveal" aria-labelledby="work-heading">
+      <h2 id="work-heading">Work Experience</h2>
+      <div class="card reveal">
+        <h3>Senior Digital Designer - Creative Solutions Inc.</h3>
+        <p><strong>Jan 2020 - Present</strong></p>
+        <p>
+          Leading a creative team to build immersive digital experiences by blending vintage aesthetics with futuristic technology. I focus on integrating exaggerated hierarchy and hyperreal glitch effects to captivate audiences.
+        </p>
+      </div>
+      <div class="card reveal">
+        <h3>UX/UI Designer - Innovative Digital Agency</h3>
+        <p><strong>Jan 2018 - Dec 2019</strong></p>
+        <p>
+          Developed user-centric digital products with retro revival, dopamine-infused colors, and dial‑up design nuances. I specialized in neomorphic interfaces and engaging scroll-triggered animations.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="reveal" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <div class="card reveal">
+        <h3>Bachelor of Fine Arts in Digital Media</h3>
+        <p><strong>University of the Arts, 2014 - 2018</strong></p>
+        <p>
+          Specialized in interactive design, digital storytelling, and innovative media production.
+        </p>
+      </div>
+      <div class="card reveal">
+        <h3>Certificate in UX/UI Design</h3>
+        <p><strong>Design Institute, 2019</strong></p>
+        <p>
+          Advanced coursework in user experience design, interface prototyping, and human-centered design strategies.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="reveal" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <div class="grid">
+        <div class="grid-item reveal">
+          <h4>Retro Vision</h4>
+          <p>
+            An immersive digital installation that fuses elevated brutalism with neomorphic and glassmorphic effects—blending nostalgia with futuristic design.
+          </p>
+        </div>
+        <div class="grid-item reveal">
+          <h4>Glitch City</h4>
+          <p>
+            A dynamic web experience featuring hyperreal glitch animations, neon gradients, and museumcore structure to craft an engaging digital narrative.
+          </p>
+        </div>
+        <div class="grid-item reveal">
+          <h4>Neon Pulse</h4>
+          <p>
+            An interactive project combining exaggerated hierarchy and scroll-triggered animations with retrofuture femme aesthetics.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Publications Section -->
+    <section id="publications" class="reveal" aria-labelledby="publications-heading">
+      <h2 id="publications-heading">Publications</h2>
+      <div class="card reveal">
+        <h3>"Digital Nostalgia: Merging Retro Design with Modern Tech"</h3>
+        <p><strong>Design Journal, 2023</strong></p>
+        <p>
+          An in-depth exploration of how vintage aesthetics and futuristic design converge in contemporary digital media.
+        </p>
+      </div>
+      <div class="card reveal">
+        <h3>"The Future of UX: Neomorphism and Beyond"</h3>
+        <p><strong>UX Magazine, 2024</strong></p>
+        <p>
+          A critical analysis of emerging design trends, focusing on the balance between tactile neomorphic interfaces and functional user experience.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Resume Download Section -->
+    <section id="download" class="reveal" aria-labelledby="download-heading">
+      <h2 id="download-heading">Resume</h2>
+      <p>
+        Interested in learning more? Download my full resume below.
+      </p>
+      <div class="download-resume reveal">
+        <a href="Lucas Aust Resume Fall 2024.pdf" download>Download Resume</a>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="reveal" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>
+        I'd love to connect! Reach me at: <a href="mailto:lucas.aust@example.com">lucas.aust@example.com</a>
+      </p>
+    </section>
+    
+    <!-- Elevated Brutalism Accent Block -->
+    <div class="brutalist reveal" aria-hidden="true">
+      <p>Bold, unfiltered, and unapologetically unique.</p>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="reveal">
+    <p>&copy; 2025 Lucas Aust. All rights reserved.</p>
+  </footer>
+  
+  <!-- Back-to-Top Button -->
+  <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">&#8679;</a>
+  
+  <!-- =====================
+       JavaScript: Preloader, Particle System, Scroll Reveal, Dark Mode Toggle, Scroll Progress & Dynamic Nav
+       ===================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Preloader fade out
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById('preloader');
+        preloader.style.transition = "opacity 0.5s ease-out";
+        preloader.style.opacity = "0";
+        setTimeout(() => { preloader.style.display = "none"; }, 500);
+      });
+      
+      // Scroll Progress Bar
+      const progressBar = document.getElementById('progress-bar');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrolled = (scrollTop / docHeight) * 100;
+        progressBar.style.width = scrolled + "%";
+      });
+      
+      // Scroll Reveal using IntersectionObserver
+      const reveals = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.2 });
+      reveals.forEach(reveal => revealObserver.observe(reveal));
+      
+      // Dynamic Navigation & Back-to-Top Button
+      const nav = document.querySelector('nav.fixed-nav');
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          nav.classList.add('scrolled');
+          backToTop.classList.add('show');
+        } else {
+          nav.classList.remove('scrolled');
+          backToTop.classList.remove('show');
+        }
+      });
+      
+      // Dark Mode Toggle with Persistence
+      const toggleBtn = document.getElementById('toggleModeBtn');
+      // Check localStorage for theme
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggleBtn.textContent = "Enter Light Mode";
+      } else {
+        toggleBtn.textContent = "Enter Dark Mode";
+      }
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+          toggleBtn.textContent = "Enter Light Mode";
+          localStorage.setItem('theme', 'dark');
+        } else {
+          toggleBtn.textContent = "Enter Dark Mode";
+          localStorage.setItem('theme', 'light');
+        }
+      });
+      
+      /* ================= Particle System ================= */
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      let particlesArray = [];
+      const numberOfParticles = 100;
+      
+      function resizeCanvas() {
+        canvas.width = header.clientWidth;
+        canvas.height = header.clientHeight;
+      }
+      const header = document.querySelector('header');
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+      
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 1;
+          this.speedX = Math.random() * 1 - 0.5;
+          this.speedY = Math.random() * 1 - 0.5;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.x < 0) this.x = canvas.width;
+          if (this.x > canvas.width) this.x = 0;
+          if (this.y < 0) this.y = canvas.height;
+          if (this.y > canvas.height) this.y = 0;
+        }
+        draw() {
+          ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      
+      function initParticles() {
+        particlesArray = [];
+        for (let i = 0; i < numberOfParticles; i++) {
+          particlesArray.push(new Particle());
+        }
+      }
+      initParticles();
+      
+      function connectParticles() {
+        for (let a = 0; a < particlesArray.length; a++) {
+          for (let b = a; b < particlesArray.length; b++) {
+            const dx = particlesArray[a].x - particlesArray[b].x;
+            const dy = particlesArray[a].y - particlesArray[b].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < 80) {
+              ctx.strokeStyle = "rgba(255,255,255,0.1)";
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+              ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+      
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach(p => {
+          p.update();
+          p.draw();
+        });
+        connectParticles();
+        requestAnimationFrame(animateParticles);
+      }
+      animateParticles();
+    });
+  </script>
+</body>
+</html>
+
