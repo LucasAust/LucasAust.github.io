@@ -4,7 +4,7 @@
   <!-- Essential Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Lucas Aust - Digital Designer, Developer, and Creative Storyteller. Explore my work experience, education, projects, publications, and download my resume." />
+  <meta name="description" content="Lucas Aust – Computer Information Systems Candidate with experience in research, digital innovation, and collaborative projects." />
   <meta name="author" content="Lucas Aust" />
   <title>Lucas Aust | Digital Resume</title>
   
@@ -145,7 +145,7 @@
     }
     
     /* =====================
-       Hero Section with Particle Canvas & Animated Blob
+       Header / Hero Section with Particle Canvas & Animated Blob
        ===================== */
     header {
       position: relative;
@@ -205,7 +205,7 @@
     }
     header p {
       font-size: 1.2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       position: relative;
       z-index: 2;
       transform: translateZ(20px);
@@ -245,12 +245,12 @@
       border-radius: 8px;
       position: relative;
       overflow: hidden;
-      /* Add a slight stagger effect */
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-    section.active {
+    section.active,
+    section.reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
@@ -270,7 +270,7 @@
       margin-top: 0.5rem;
       border-radius: 2px;
     }
-    section p {
+    section p, section ul {
       font-size: 1.1rem;
       margin-bottom: 1rem;
       position: relative;
@@ -305,7 +305,9 @@
     }
     .card:hover { transform: perspective(600px) rotateX(3deg) rotateY(3deg) translateY(-3px); }
     
-    /* Projects Grid */
+    /* =====================
+       Projects Grid (if needed)
+       ===================== */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -324,7 +326,9 @@
     }
     .grid-item:hover { transform: perspective(600px) rotateX(2deg) rotateY(-2deg) scale(1.05); }
     
-    /* Resume Download Button */
+    /* =====================
+       Resume Download Button
+       ===================== */
     .download-resume {
       text-align: center;
       margin: 2rem 0;
@@ -344,18 +348,6 @@
     .download-resume a:hover {
       background: var(--sandstone);
       transform: translateY(-3px);
-    }
-    
-    /* Elevated Brutalism Accent Block */
-    .brutalist {
-      background: var(--dark-grey);
-      color: var(--light-grey);
-      padding: 2rem;
-      margin: 2rem 0;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      border-radius: 8px;
     }
     
     /* =====================
@@ -390,17 +382,6 @@
     .back-to-top.show { opacity: 1; visibility: visible; }
     
     /* =====================
-       Staggered Scroll Reveal Animation
-       ===================== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      transition-delay: 0.2s;
-    }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    
-    /* =====================
        Responsive Typography
        ===================== */
     @media (max-width: 768px) {
@@ -421,12 +402,14 @@
   <!-- Fixed Navigation with Dark Mode Toggle -->
   <nav class="fixed-nav" role="navigation" aria-label="Main Navigation">
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#download">Resume</a></li>
+      <li><a href="#involvement">Involvement</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><button class="toggle-mode" id="toggleModeBtn">Enter Dark Mode</button></li>
     </ul>
@@ -439,37 +422,65 @@
     <!-- Animated Blob -->
     <div class="animated-blob"></div>
     <h1 class="glitch reveal">Lucas Aust</h1>
-    <p class="reveal">Digital Designer • Developer • Creative Storyteller</p>
+    <p class="reveal">Bachelor of Science Computer Information Systems Candidate, May 2025</p>
+    <p class="reveal">laust@email.sc.edu &nbsp;|&nbsp; 585-626-7860</p>
     <!-- Scroll Down Indicator -->
     <div class="scroll-down reveal" aria-hidden="true">&#x2193;</div>
   </header>
   
   <!-- Main Content Container -->
   <div class="container">
-    <!-- About Me Section -->
-    <section id="about" class="reveal" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Me</h2>
+    
+    <!-- Profile Section -->
+    <section id="profile" class="reveal" aria-labelledby="profile-heading">
+      <h2 id="profile-heading">Profile</h2>
       <p>
-        I'm Lucas Aust—a multidisciplinary digital creative merging modern design with retro flair. My work spans digital design, development, and interactive storytelling with a passion for bold visuals and immersive experiences.
+        I am a motivated Computer Information Systems candidate with a passion for leveraging technology to drive innovation in healthcare, education, and business. Experienced in front-end development, research, and collaborative projects.
       </p>
     </section>
     
-    <!-- Work Experience Section -->
-    <section id="work" class="reveal" aria-labelledby="work-heading">
-      <h2 id="work-heading">Work Experience</h2>
+    <!-- Professional Experience Section -->
+    <section id="experience" class="reveal" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Professional Experience</h2>
+      
+      <!-- IQVentory (Placeholder) -->
       <div class="card reveal">
-        <h3>Senior Digital Designer - Creative Solutions Inc.</h3>
-        <p><strong>Jan 2020 - Present</strong></p>
-        <p>
-          Leading a creative team to build immersive digital experiences by blending vintage aesthetics with futuristic technology. I focus on integrating exaggerated hierarchy and hyperreal glitch effects to captivate audiences.
-        </p>
+        <h3>IQVentory</h3>
+        <p><strong>Details coming soon.</strong></p>
       </div>
+      
+      <!-- Research Assistant -->
       <div class="card reveal">
-        <h3>UX/UI Designer - Innovative Digital Agency</h3>
-        <p><strong>Jan 2018 - Dec 2019</strong></p>
-        <p>
-          Developed user-centric digital products with retro revival, dopamine-infused colors, and dial‑up design nuances. I specialized in neomorphic interfaces and engaging scroll-triggered animations.
-        </p>
+        <h3>Research Assistant – HI3 Tech Lab</h3>
+        <p><strong>Columbia, SC | October 2023 – Present</strong></p>
+        <ul>
+          <li>Build front-end applications to display patient health information.</li>
+          <li>Develop a Large Language Model chatbot for health interventions.</li>
+          <li>Create programs that utilize ChatGPT to evaluate over 10,000 health-related social media posts.</li>
+          <li>Won McNAIR Junior Fellowship Award to conduct summer research.</li>
+        </ul>
+      </div>
+      
+      <!-- Student Ambassador -->
+      <div class="card reveal">
+        <h3>Student Ambassador – University of South Carolina Honors College</h3>
+        <p><strong>Columbia, SC | April 2023 – Present</strong></p>
+        <ul>
+          <li>Conduct 10–15 information sessions per semester for prospective students and families.</li>
+          <li>Present at admitted student panels to over 250 participants.</li>
+          <li>Market all aspects of the Honors College to potential students and families.</li>
+        </ul>
+      </div>
+      
+      <!-- Technology Analyst / Landscaper -->
+      <div class="card reveal">
+        <h3>Technology Analyst / Landscaper – Nicoletti Landscaping</h3>
+        <p><strong>Pittsford, NY | May 2022 – Present</strong></p>
+        <ul>
+          <li>Facilitate the training of new employees, promoting a collaborative work environment.</li>
+          <li>Create graphic designs for company logos.</li>
+          <li>Analyze company websites and databases for possible improvements.</li>
+        </ul>
       </div>
     </section>
     
@@ -477,43 +488,36 @@
     <section id="education" class="reveal" aria-labelledby="education-heading">
       <h2 id="education-heading">Education</h2>
       <div class="card reveal">
-        <h3>Bachelor of Fine Arts in Digital Media</h3>
-        <p><strong>University of the Arts, 2014 - 2018</strong></p>
-        <p>
-          Specialized in interactive design, digital storytelling, and innovative media production.
-        </p>
-      </div>
-      <div class="card reveal">
-        <h3>Certificate in UX/UI Design</h3>
-        <p><strong>Design Institute, 2019</strong></p>
-        <p>
-          Advanced coursework in user experience design, interface prototyping, and human-centered design strategies.
-        </p>
+        <h3>University of South Carolina Honors College</h3>
+        <p><strong>Columbia, SC</strong></p>
+        <p>Swearingen College of Engineering &amp; Computing | Darla Moore School of Business</p>
+        <p>Major: Bachelor of Science in Computer Information Systems (Candidate, May 2025)</p>
+        <p>Minors: Business Information Management &amp; Data Science</p>
+        <p>GPA: 3.957/4.0</p>
       </div>
     </section>
     
-    <!-- Projects Section -->
+    <!-- Projects Section (Classroom Projects) -->
     <section id="projects" class="reveal" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-      <div class="grid">
-        <div class="grid-item reveal">
-          <h4>Retro Vision</h4>
-          <p>
-            An immersive digital installation that fuses elevated brutalism with neomorphic and glassmorphic effects—blending nostalgia with futuristic design.
-          </p>
-        </div>
-        <div class="grid-item reveal">
-          <h4>Glitch City</h4>
-          <p>
-            A dynamic web experience featuring hyperreal glitch animations, neon gradients, and museumcore structure to craft an engaging digital narrative.
-          </p>
-        </div>
-        <div class="grid-item reveal">
-          <h4>Neon Pulse</h4>
-          <p>
-            An interactive project combining exaggerated hierarchy and scroll-triggered animations with retrofuture femme aesthetics.
-          </p>
-        </div>
+      <h2 id="projects-heading">Classroom Projects</h2>
+      <div class="card reveal">
+        <h3>Java Camp Application – Classroom Project</h3>
+        <ul>
+          <li>Worked collaboratively in a team of five on a large-scale project using Git.</li>
+          <li>Designed software by creating a UML class diagram, eliciting requirements from a faux client, developing unit tests using J-Unit, and applying multiple design patterns.</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Disease Chatbot – Classroom Project</h3>
+        <ul>
+          <li>Developed an AI-driven chatbot to provide disease information using Java.</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Draft-Vision-Ai – Ongoing Classroom Project</h3>
+        <ul>
+          <li>Leverage machine learning models to evaluate college football players’ performance and predict NFL success.</li>
+        </ul>
       </div>
     </section>
     
@@ -521,18 +525,14 @@
     <section id="publications" class="reveal" aria-labelledby="publications-heading">
       <h2 id="publications-heading">Publications</h2>
       <div class="card reveal">
-        <h3>"Digital Nostalgia: Merging Retro Design with Modern Tech"</h3>
-        <p><strong>Design Journal, 2023</strong></p>
-        <p>
-          An in-depth exploration of how vintage aesthetics and futuristic design converge in contemporary digital media.
-        </p>
+        <h3>Automated Data Annotation with LLMs</h3>
+        <p><strong>(2024) ICHI 2025</strong></p>
+        <p>Vuruma, S. K. R., Wu, D., Gupta, S. S., Aust, L., Lookingbill, V., Henry, C., ... &amp; Huang, M.</p>
       </div>
       <div class="card reveal">
-        <h3>"The Future of UX: Neomorphism and Beyond"</h3>
-        <p><strong>UX Magazine, 2024</strong></p>
-        <p>
-          A critical analysis of emerging design trends, focusing on the balance between tactile neomorphic interfaces and functional user experience.
-        </p>
+        <h3>Utilizing Large Language Models to Identify Reddit Users Considering Vaping Cessation for Digital Interventions</h3>
+        <p><strong>(2024) Paper Presentation at AIME 2024 Workshop</strong></p>
+        <p>Vuruma, S. K. R., Wu, D., Gupta, S. S., Aust, L., Lookingbill, V., Henry, C., ... &amp; Huang, M.</p>
       </div>
     </section>
     
@@ -543,7 +543,33 @@
         Interested in learning more? Download my full resume below.
       </p>
       <div class="download-resume reveal">
-        <a href="Lucas Aust Resume Fall 2024.pdf" download>Download Resume</a>
+        <a href="Lucas_Aust_Resume.pdf" download>Download Resume</a>
+      </div>
+    </section>
+    
+    <!-- Involvement Section -->
+    <section id="involvement" class="reveal" aria-labelledby="involvement-heading">
+      <h2 id="involvement-heading">Involvement</h2>
+      <div class="card reveal">
+        <h3>Treasurer – Phi Chi Theta Professional Fraternity (Zeta Sigma)</h3>
+        <p><strong>May 2023 – May 2024</strong></p>
+        <ul>
+          <li>Managed a budget of over $10,000.</li>
+          <li>Identified and funded a national award-winning professional event.</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3>Augusta National Master’s Program</h3>
+        <p><strong>August 2021 – April 2022</strong></p>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="reveal" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <div class="card reveal">
+        <p><strong>Programming Languages:</strong> Java, R, Python, SQL, JavaScript, HTML</p>
+        <p><strong>Software:</strong> Figma, Tableau, Microsoft Suite, RStudio, GitHub, Slack, Git</p>
       </div>
     </section>
     
@@ -551,14 +577,10 @@
     <section id="contact" class="reveal" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
       <p>
-        I'd love to connect! Reach me at: <a href="mailto:lucas.aust@example.com">lucas.aust@example.com</a>
+        I'd love to connect! Email: <a href="mailto:laust@email.sc.edu">laust@email.sc.edu</a> | Phone: 585-626-7860
       </p>
     </section>
     
-    <!-- Elevated Brutalism Accent Block -->
-    <div class="brutalist reveal" aria-hidden="true">
-      <p>Bold, unfiltered, and unapologetically unique.</p>
-    </div>
   </div>
   
   <!-- Footer -->
@@ -713,4 +735,3 @@
   </script>
 </body>
 </html>
-
